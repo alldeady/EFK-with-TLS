@@ -4,6 +4,8 @@
 # KIBCERTSDIR="/usr/share/kibana/config"
 # FLUCERTSDIR="/etc/ssl/certs"
 
+# https://www.elastic.co/guide/en/elastic-stack-get-started/current/get-started-docker.html#run-stack-docker
+
 version: '2.2'
 
 services:
@@ -150,8 +152,7 @@ services:
       - "es01"
     ports:
       - 2020:2020
-    depends_on:
-      - es01
+    depends_on: {"es01": {"condition": "service_healthy"}}
     logging:
         driver: "json-file"
         options:
