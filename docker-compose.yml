@@ -24,11 +24,11 @@ services:
       - xpack.security.http.ssl.key=${ESCERTSDIR}/es01.key
       - xpack.security.http.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
       - xpack.security.http.ssl.certificate=${ESCERTSDIR}/es01.crt
-      # - xpack.security.transport.ssl.enabled=true
-      # - xpack.security.transport.ssl.verification_mode=certificate
-      # - xpack.security.transport.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
-      # - xpack.security.transport.ssl.certificate=${ESCERTSDIR}/es01.crt
-      # - xpack.security.transport.ssl.key=${ESCERTSDIR}/es01.key
+      - xpack.security.transport.ssl.enabled=true
+      - xpack.security.transport.ssl.verification_mode=certificate
+      - xpack.security.transport.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
+      - xpack.security.transport.ssl.certificate=${ESCERTSDIR}/es01.crt
+      - xpack.security.transport.ssl.key=${ESCERTSDIR}/es01.key
     ulimits:
       nofile:
         soft: 65536
@@ -66,11 +66,11 @@ services:
       - xpack.security.http.ssl.key=${ESCERTSDIR}/es02.key
       - xpack.security.http.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
       - xpack.security.http.ssl.certificate=${ESCERTSDIR}/es02.crt
-      # - xpack.security.transport.ssl.enabled=true
-      # - xpack.security.transport.ssl.verification_mode=certificate
-      # - xpack.security.transport.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
-      # - xpack.security.transport.ssl.certificate=${ESCERTSDIR}/es02.crt
-      # - xpack.security.transport.ssl.key=${ESCERTSDIR}/es02.key
+      - xpack.security.transport.ssl.enabled=true
+      - xpack.security.transport.ssl.verification_mode=certificate
+      - xpack.security.transport.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
+      - xpack.security.transport.ssl.certificate=${ESCERTSDIR}/es02.crt
+      - xpack.security.transport.ssl.key=${ESCERTSDIR}/es02.key
     ulimits:
       nofile:
         soft: 65536
@@ -101,11 +101,11 @@ services:
       - xpack.security.http.ssl.key=${ESCERTSDIR}/es03.key
       - xpack.security.http.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
       - xpack.security.http.ssl.certificate=${ESCERTSDIR}/es03.crt
-      # - xpack.security.transport.ssl.enabled=true
-      # - xpack.security.transport.ssl.verification_mode=certificate
-      # - xpack.security.transport.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
-      # - xpack.security.transport.ssl.certificate=${ESCERTSDIR}/es03.crt
-      # - xpack.security.transport.ssl.key=${ESCERTSDIR}/es03.key
+      - xpack.security.transport.ssl.enabled=true
+      - xpack.security.transport.ssl.verification_mode=certificate
+      - xpack.security.transport.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
+      - xpack.security.transport.ssl.certificate=${ESCERTSDIR}/es03.crt
+      - xpack.security.transport.ssl.key=${ESCERTSDIR}/es03.key
     ulimits:
       nofile:
         soft: 65536
