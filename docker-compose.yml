@@ -1,5 +1,5 @@
-# VERSION="7.8.0"
-# HOSTCERTSDIR="$PWD/../elkcerts"
+# VERSION="7.11.1"
+# HOSTCERTSDIR="$PWD/certs"
 # ESCERTSDIR="/usr/share/elasticsearch/config"
 # KIBCERTSDIR="/usr/share/kibana/config"
 # FLUCERTSDIR="/etc/ssl/certs"
@@ -24,11 +24,11 @@ services:
       - xpack.security.http.ssl.key=${ESCERTSDIR}/es01.key
       - xpack.security.http.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
       - xpack.security.http.ssl.certificate=${ESCERTSDIR}/es01.crt
-      - xpack.security.transport.ssl.enabled=true
-      - xpack.security.transport.ssl.verification_mode=certificate
-      - xpack.security.transport.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
-      - xpack.security.transport.ssl.certificate=${ESCERTSDIR}/es01.crt
-      - xpack.security.transport.ssl.key=${ESCERTSDIR}/es01.key
+      # - xpack.security.transport.ssl.enabled=true
+      # - xpack.security.transport.ssl.verification_mode=certificate
+      # - xpack.security.transport.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
+      # - xpack.security.transport.ssl.certificate=${ESCERTSDIR}/es01.crt
+      # - xpack.security.transport.ssl.key=${ESCERTSDIR}/es01.key
     ulimits:
       nofile:
         soft: 65536
@@ -46,7 +46,7 @@ services:
     networks:
       - elastic
     healthcheck:
-      test: curl --cacert ${ESCERTSDIR}/rootCA.pem -s https://es01:9200 >/dev/null; if [[ $$? == 52 ]]; then echo 0; else echo 1; fi
+      test: curl --cacert ${ESCERTSDIR}/rootCA.pem -s https://localhost:9200 >/dev/null; if [[ $$? == 52 ]]; then echo 0; else echo 1; fi
       interval: 30s
       timeout: 10s
       retries: 5
@@ -66,11 +66,11 @@ services:
       - xpack.security.http.ssl.key=${ESCERTSDIR}/es02.key
       - xpack.security.http.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
       - xpack.security.http.ssl.certificate=${ESCERTSDIR}/es02.crt
-      - xpack.security.transport.ssl.enabled=true
-      - xpack.security.transport.ssl.verification_mode=certificate
-      - xpack.security.transport.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
-      - xpack.security.transport.ssl.certificate=${ESCERTSDIR}/es02.crt
-      - xpack.security.transport.ssl.key=${ESCERTSDIR}/es02.key
+      # - xpack.security.transport.ssl.enabled=true
+      # - xpack.security.transport.ssl.verification_mode=certificate
+      # - xpack.security.transport.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
+      # - xpack.security.transport.ssl.certificate=${ESCERTSDIR}/es02.crt
+      # - xpack.security.transport.ssl.key=${ESCERTSDIR}/es02.key
     ulimits:
       nofile:
         soft: 65536
@@ -101,11 +101,11 @@ services:
       - xpack.security.http.ssl.key=${ESCERTSDIR}/es03.key
       - xpack.security.http.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
       - xpack.security.http.ssl.certificate=${ESCERTSDIR}/es03.crt
-      - xpack.security.transport.ssl.enabled=true
-      - xpack.security.transport.ssl.verification_mode=certificate
-      - xpack.security.transport.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
-      - xpack.security.transport.ssl.certificate=${ESCERTSDIR}/es03.crt
-      - xpack.security.transport.ssl.key=${ESCERTSDIR}/es03.key
+      # - xpack.security.transport.ssl.enabled=true
+      # - xpack.security.transport.ssl.verification_mode=certificate
+      # - xpack.security.transport.ssl.certificate_authorities=${ESCERTSDIR}/rootCA.pem
+      # - xpack.security.transport.ssl.certificate=${ESCERTSDIR}/es03.crt
+      # - xpack.security.transport.ssl.key=${ESCERTSDIR}/es03.key
     ulimits:
       nofile:
         soft: 65536
