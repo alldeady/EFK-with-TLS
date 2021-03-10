@@ -1,5 +1,6 @@
 # !/bin/bash
 
+echo "change VM if ES aborted with error 78"
 # if [[ "$OSTYPE" == "linux"* ]]; then
 #         # Change VM linux
 #         sudo sysctl -w vm.max_map_count=262144
